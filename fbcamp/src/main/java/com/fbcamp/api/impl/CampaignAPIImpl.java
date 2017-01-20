@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.fbcamp.api.CampaignAPI;
-import com.fbcamp.model.AdInsights;
+import com.fbcamp.model.AdInsight;
 import com.fbcamp.model.AdReportRun;
 import com.fbcamp.model.Campaign;
 
@@ -47,12 +47,12 @@ public class CampaignAPIImpl extends RestAPIParentImpl implements CampaignAPI {
 	}
 
 	@Override
-	public AdInsights getCampaignInsights(String accessToken, Long campaignId, String startDate, String endDate)
+	public AdInsight getCampaignInsights(String accessToken, Long campaignId, String startDate, String endDate)
 			throws Exception {
 		campaignInsightsParameters.put("time_range",
 				timeRange.replace("<start_time>", startDate).replace("<end_time>", endDate));
-		List<AdInsights> adInsights = callAPI(accessToken,
-				campaignInsightUrl.replace("<campaign_id>", campaignId.toString()), AdInsights.class,
+		List<AdInsight> adInsights = callAPI(accessToken,
+				campaignInsightUrl.replace("<campaign_id>", campaignId.toString()), AdInsight.class,
 				campaignInsightsParameters);
 		if (null == adInsights || adInsights.isEmpty()) {
 			return null;
@@ -90,24 +90,25 @@ public class CampaignAPIImpl extends RestAPIParentImpl implements CampaignAPI {
 	}
 
 	public static void main(String[] args) {
-		String accessToken = "EAAGPpGSsCToBAOeNwyZCr2cQxb4yrj0EjEBFXlxlTorlPvHhYIvnWqirpkx8bOlPtwXUIuTefuPxejpHbzL4CZBr9mPXi9P6pZCoNVDEZAWUslAG0uA9JVPpchWCAQxblggZBQEXci3CAhRZC44wuQIUnylb1awZAAZD";
+		String accessToken = "EAAGPpGSsCToBAAsZABFxlRAZAMNNtym9pXbIY5MsolZClZBiPNSzTbVVgAwCBpfNtRdl46JFdOttnFtYWniJL1ZCp9nwsmCHzZCYo5utgxZAaT19f0ZAyGDjSp7wguxKF2FidwxRrYp5fZBdwbHTpOJiR5ePzroGP3UZAyrSB3RRL91QZDZD";
 		CampaignAPIImpl adAccountAPIImpl = new CampaignAPIImpl();
 		try {
 
-			/*
-			 * List<Campaign> campaignAccounts =
-			 * adAccountAPIImpl.getCampaignList(accessToken,1584952255132965L);
-			 * System.out.println(campaignAccounts);
-			 * 
-			 * AdInsights adInsights =
-			 * adAccountAPIImpl.getCampaignInsights(accessToken,
-			 * 23842522479720757L, "2016-12-16","2017-01-14");
-			 * System.out.println(adInsights);
-			 */
+			
+			 List<Campaign> campaigns =
+			 adAccountAPIImpl.getCampaignList(accessToken,1584952255132965L);
+	 
+			 
+			 
+			 for(Campaign campaign:campaigns){
+				 System.out.println(campaign);
+				 AdInsight adInsights = adAccountAPIImpl.getCampaignInsights(accessToken,
+						 Long.parseLong(campaign.getmId()), "2016-12-16","2017-01-14");
+						 System.out.println(adInsights);
+			 }
+			
+			 
 
-			AdReportRun adReportRun = adAccountAPIImpl.getReport(accessToken, 23842522479720757L, "2016-12-16",
-					"2017-01-14");
-			System.out.println(adReportRun);
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

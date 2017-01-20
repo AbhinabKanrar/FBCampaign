@@ -74,8 +74,7 @@ public class RestAPIParentImpl implements RestAPIParent {
 				parameters[i] = Parameter.with(parameterName, parametersMap.get(parameterName));
 				i++;
 			}
-			response = facebookClient.fetchObject(restUrl, String.class, parameters);
-			System.out.println(response);
+			response = facebookClient.fetchObject(restUrl, String.class, parameters);			
 		}
 		JsonParser jsonParser = new JsonParser();
 		JsonArray arr;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
-public class AdInsights implements Serializable {
+public class AdInsight implements Serializable {
 	/**
 	 * 
 	 */
@@ -125,7 +125,7 @@ public class AdInsights implements Serializable {
 	@SerializedName("website_clicks")
 	private String mWebsiteClicks;
 
-	public AdInsights() {
+	public AdInsight() {
 		super();
 	}
 
@@ -608,7 +608,7 @@ public class AdInsights implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AdInsights other = (AdInsights) obj;
+		AdInsight other = (AdInsight) obj;
 		if (mAccountId == null) {
 			if (other.mAccountId != null)
 				return false;

@@ -6,7 +6,7 @@ import java.util.Map;
 
 import com.fbcamp.api.AdAccountAPI;
 import com.fbcamp.model.AdAccount;
-import com.fbcamp.model.AdInsights;
+import com.fbcamp.model.AdInsight;
 
 public class AdAccountAPIImpl extends RestAPIParentImpl implements AdAccountAPI {
 	private String adaccountRestUrl = "me/adaccounts";
@@ -32,32 +32,39 @@ public class AdAccountAPIImpl extends RestAPIParentImpl implements AdAccountAPI 
 	}
 
 	public static void main(String[] args) {
-		String accessToken = "EAAGPpGSsCToBAOeNwyZCr2cQxb4yrj0EjEBFXlxlTorlPvHhYIvnWqirpkx8bOlPtwXUIuTefuPxejpHbzL4CZBr9mPXi9P6pZCoNVDEZAWUslAG0uA9JVPpchWCAQxblggZBQEXci3CAhRZC44wuQIUnylb1awZAAZD";
+		String accessToken = "EAAGPpGSsCToBAAsZABFxlRAZAMNNtym9pXbIY5MsolZClZBiPNSzTbVVgAwCBpfNtRdl46JFdOttnFtYWniJL1ZCp9nwsmCHzZCYo5utgxZAaT19f0ZAyGDjSp7wguxKF2FidwxRrYp5fZBdwbHTpOJiR5ePzroGP3UZAyrSB3RRL91QZDZD";
 		AdAccountAPIImpl adAccountAPIImpl = new AdAccountAPIImpl();
 		try {
 
 			List<AdAccount> adAccounts = adAccountAPIImpl.getAdAccountList(accessToken);
 			adAccounts.forEach(System.out::println);
 
-			AdInsights adInsights = adAccountAPIImpl.getAdAccountInsights(accessToken, 1584952255132965L, "2016-12-16",
+			AdInsight adInsight = adAccountAPIImpl.getAdAccountInsight(accessToken, 1584952255132965L, "2016-12-16",
 					"2017-01-14");
-			System.out.println(adInsights);
+			System.out.println(adInsight);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	@Override
-	public AdInsights getAdAccountInsights(String accessToken, Long accountId, String startDate, String endDate)
+	public AdInsight getAdAccountInsight(String accessToken, Long accountId, String startDate, String endDate)
 			throws Exception {
 		adaccountInsightsParameters.put("time_range",
 				timeRange.replace("<start_time>", startDate).replace("<end_time>", endDate));
-		List<AdInsights> adInsights = callAPI(accessToken,
-				adaccountInsightUrl.replace("<ad_account_id>", accountId.toString()), AdInsights.class,
+		
+		List<AdInsight> adInsights=callAPI(accessToken,
+				adaccountInsightUrl.replace("<ad_account_id>", accountId.toString()), AdInsight.class,
 				adaccountInsightsParameters);
-		if (null == adInsights || adInsights.isEmpty()) {
-			return null;
+		AdInsight adInsight=null;
+		if(!(adInsights==null||adInsights.isEmpty())){
+			 adInsight= callAPI(accessToken,
+					adaccountInsightUrl.replace("<ad_account_id>", accountId.toString()), AdInsight.class,
+					adaccountInsightsParameters).get(0);
 		}
-		return adInsights.get(0);
+		
+		
+		return adInsight;
 	}
 }

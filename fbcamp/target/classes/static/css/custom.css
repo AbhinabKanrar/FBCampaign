@@ -1,4 +1,45 @@
 .navbar-brand { padding: 4px 0px 1px 0px;}
+
+body{
+	background-color: #EDEFF0;
+}
+
+body > nav{
+	height: 67px;
+}
+
+.nav-right-text{
+font-size: 16px;
+    font-weight: bold;
+    color: #FFF;
+    margin-left: 10px;
+    }
+
+#navbar > ul > li.dropdown > a
+{
+	color: #FFF;
+}
+
+#navbar > ul > li.nav-right-text > a
+{
+	color: #FFF;
+}
+
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover{
+	background-color: #3c3838;
+}
+#navbar > ul
+{
+    margin-top: 4px;
+    color: white;
+    font-size: medium;
+}
+.navbar-default {
+    /* background-color: #f8f8f8; */
+    background-color: #3E474F;
+    border-color: #e7e7e7;
+}
 #custom-search-input{
     padding: 3px;
     border: solid 1px #E4E4E4;

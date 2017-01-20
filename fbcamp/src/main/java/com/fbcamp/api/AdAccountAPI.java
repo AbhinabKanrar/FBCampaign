@@ -3,7 +3,7 @@ package com.fbcamp.api;
 import java.util.List;
 
 import com.fbcamp.model.AdAccount;
-import com.fbcamp.model.AdInsights;
+import com.fbcamp.model.AdInsight;
 
 public interface AdAccountAPI {
 
@@ -23,5 +23,7 @@ public interface AdAccountAPI {
 	 * @return AdInsights of a account
 	 * @throws Exception
 	 */
-	public AdInsights getAdAccountInsights(String accessToken, Long accountId,String startDate,String endDate) throws Exception;
+	public AdInsight getAdAccountInsight(String accessToken, Long accountId,String startDate,String endDate) throws Exception;
+
+	
 }
