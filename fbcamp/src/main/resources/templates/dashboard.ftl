@@ -7,32 +7,33 @@
       <!-- Left Column -->
       <div class="col-md-8 left-col ">
           
-        <div class="row well ">
+        <div  id="accountInsight" class="row well ">
                  <div class="col-md-2   text-center">
                      <p>Amount Spent</p>
                      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
+                     <p id="amountSpend">$12345</p>
                   </div> 
                 <div class="col-md-2   text-center">
                     <p>Clicks</p>
                      <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                     <p>345</p>
+                     <p id="clicks">345</p>
                   </div> 
                  <div class="col-md-2   text-center">
                      <p>Conversions</p>
                      <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                     <p>67</p>
+                     <p id="conversions">67</p>
                   </div> 
                 <div class="col-md-2   text-center">
                     <p>Amount Earned</p>
                      <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>67</p>
+                     <p id="amountEarned">67</p>
                   </div> 
                  <div class="col-md-2   text-center">
                      ROI
+                     <p id="roi">67</p>
                   </div> 
                 <div class="col-md-2   text-center">
-                    Calendar Pop Up Here
+                    <a class="btn">Select Date</a>
                   </div>
           </div>  
           
@@ -186,10 +187,7 @@
                 <div class="col-md-1   text-center">
                    View
                   </div>
-          </div>  
-          
-          
-          
+          </div>           
     </div>
         
           <!--Space between left and right column -->
