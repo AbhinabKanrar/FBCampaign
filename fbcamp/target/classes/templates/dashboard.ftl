@@ -8,33 +8,7 @@
       <div class="col-md-8 left-col ">
           
         <div  id="accountInsight" class="row well ">
-                 <div class="col-md-2   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p id="amountSpend">$12345</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Clicks</p>
-                     <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                     <p id="clicks">345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Conversions</p>
-                     <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                     <p id="conversions">67</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Amount Earned</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p id="amountEarned">67</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     ROI
-                     <p id="roi">67</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <a class="btn">Select Date</a>
-                  </div>
+                 
           </div>  
           
           
@@ -53,141 +27,11 @@
                 </div>	
           </div>
           
-          <div class="row well ">
-                  <div class="col-md-1   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Clicks</p>
-                     <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                     <p>345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Conversions</p>
-                     <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Amount Earned</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     ROI
-                  </div> 
-                <div class="col-md-1   text-center">
-                  <a href="/campaign"> View</a>
-                  </div>
-          </div>  
+       <div id="campaignInsightList">   
           
-          <div class="row well ">
-                  <div class="col-md-1   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Clicks</p>
-                     <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                     <p>345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Conversions</p>
-                     <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Amount Earned</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     ROI
-                  </div> 
-                <div class="col-md-1   text-center">
-                   View
-                  </div>
-          </div>  
+      </div>
           
           
-          <div class="row well ">
-                  <div class="col-md-1   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Clicks</p>
-                     <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                     <p>345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Conversions</p>
-                     <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Amount Earned</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     ROI
-                  </div> 
-                <div class="col-md-1   text-center">
-                   View
-                  </div>
-          </div>  
-           <div class="row well ">
-                  <div class="col-md-1   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Amount Spent</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>$12345</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Clicks</p>
-                     <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                     <p>345</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     <p>Conversions</p>
-                     <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                <div class="col-md-2   text-center">
-                    <p>Amount Earned</p>
-                     <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                     <p>67</p>
-                  </div> 
-                 <div class="col-md-2   text-center">
-                     ROI
-                  </div> 
-                <div class="col-md-1   text-center">
-                   View
-                  </div>
-          </div>           
     </div>
         
           <!--Space between left and right column -->
@@ -198,12 +42,12 @@
              <div class="row well ">
              <p class="text-center">Want Help? </p>
              <p class="text-center">Watch box containing video</p>
-             <iframe width="284" height="200" src="https://www.youtube.com/embed/XGSy3_Czz8k">
+             <iframe width="284" height="200" src="https://www.youtube.com/embed/17BXm4XtZHM">
              </iframe>
              </div>
             <div class="row "></div>
-             <div class="row well text-center">
-                 Support Click Here
+             <div class="row text-center">
+                 <div class="btn-success  view-button" >Support Click Here</div>
              </div>
           </div>
        
@@ -212,3 +56,4 @@
  </div> 
     <!-- /container -->
 <#include "footer.ftl">
+<#include "dashboard-template.ftl">

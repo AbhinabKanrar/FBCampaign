@@ -1,61 +1,3 @@
-<#--Get All adAccounts--> 
-<#--Get All adInsights Respective of adAccount-->
-<script src="js/jquery.js"></script>
-<script>
-
-console.log(" Users adAccounts");
-
-var allAdAccounts=[<#list model["adAccount"] as adAccount>${adAccount.mAccountId},</#list>];
-
-var arrayLength =  allAdAccounts.length;
-
-for (var i = 0; i < arrayLength; i++) {
-    console.log(allAdAccounts[i]);
-}
-
-function Insight(accountId, accountName) {
-  this.accountId = accountId;
-  this.accountName = accountName;
- }
- 
- function Campaigns(accountId,name,id) {
-  this.accountId = accountId;
-  this.name = name;
-  this.id=id;
- }
- function CampaignInsight(accountId, accountName) {
-  this.accountId = accountId;
-  this.accountName = accountName;
- }
-
-var allAdInsights = [];
-<#list model["accountInsights"] as adAccount>
-<#if adAccount??>
-   var temp=new Insight(${adAccount.mAccountId},'${adAccount.mAccountName}');
-   allAdInsights.push(temp);
-</#if> 
-</#list>
-
-var campaigns=[];
-<#list model["campaigns"] as campaign>
-<#if campaign??>
-    var temp=new Campaigns(${campaign.mAccountId},'${campaign.mName?js_string}',${campaign.mId});
-    campaigns.push(temp);
-</#if> 
-</#list>
-
-var campaignInsight=[];
-<#list model["campaignInsight"] as campaignInsight>
-<#if campaignInsight??>
-    var temp=new CampaignInsight(${campaignInsight.mAccountId},'${campaignInsight.mAccountName}');
-    campaignInsight.push(temp);
-</#if> 
-</#list>
-console.log(campaigns);
-console.log(campaignInsight);
-</script>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,7 +14,7 @@ console.log(campaignInsight);
 
     <!-- Custom styles for this template -->
     <link href="css/navbar-fixed-top.css" rel="stylesheet">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="css/custom.css" rel="stylesheet">
   </head>
 
@@ -88,33 +30,29 @@ console.log(campaignInsight);
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img src="https://images.clickfunnels.com/uploads/digital_asset/file/176632/clickfunnels-dark-logo.svg" class="logo img-responsive" width="235" ></a>
+          <a class="navbar-brand" href="#"><img src="https://www.clickfunnels.com/images/badge.png" class="logo img-responsive" width="235" ></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
          <ul class="nav navbar-nav navbar-right">
          
          
-         	<li class="dropdown">
+         	<li class="dropdown" onclick="loadAccounts()">
               <a href="#" class="dropdown-toggle nav-right-text" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ad Accounts <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-              <#list model["adAccount"] as adAccount>
-                <li><a class="${adAccount.mAccountId}" href="#">${adAccount.mAccountId}</a></li>
-              </#list>                 
+              <ul class="dropdown-menu" id="accounts">              
+                <li><a  href="#">temp</a></li>                            
               </ul>
             </li>
             
-            <li class="nav-right-text"><a>Integration</a></li>
+            <li class="nav-right-text"><a>Integration</a></li>          
             
             
-            
-            
-            <li class="dropdown">
+            <li class="dropdown" >
               <a href="#" class="dropdown-toggle nav-right-text" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Campaign <span class="caret"></span></a>
               <ul id="campaignList" class="dropdown-menu ">
                 
               </ul>
             </li>
-             <li><a  class="nav-right-text">Help</a></li>
+             <li class="nav-right-text"><a >Help</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -123,65 +61,3 @@ console.log(campaignInsight);
     
     
     
-<script>
-
-
-var selectedAccount;
-<#list model["adAccount"] as adAccount>
-$('.${adAccount.mAccountId}').on('click', function() {
- selectedAccount=${adAccount.mAccountId};
- populateCampaignDropDown();
- populateAccountInsight();
-});               
- 
-</#list> 
-
-
-function populateCampaignDropDown(){
-    $('#campaignList').html('');
-<#list model["campaigns"] as campaign>
-<#if campaign??>
-   if(selectedAccount==${campaign.mAccountId}){
-      $('#campaignList').append("<li><a href='#'>"+'${campaign.mName?js_string}'+"</a></li>");
-    }
-</#if> 
-</#list>
-} 
-
-function populateAccountInsight(){
-             $('#amountSpend').html('');
-              $('#clicks').html('');
-               $('#conversions').html('');
-               $('#amountEarned').html('');
-               $('#roi').html('');               
-     // Check for this part           
-	 <#list model["accountInsights"] as accountInsight>
-	     <#if accountInsight??>
-	       console.log(1);
-            if(selectedAccount==${accountInsight.mAccountId}){
-              $('#amountSpend').append(${accountInsight.mAccountId});
-              $('#clicks').append(${accountInsight.mAccountId});
-               $('#conversions').append(${accountInsight.mAccountId});
-               $('#amountEarned').append(${accountInsight.mAccountId});
-               $('#roi').append(${accountInsight.mAccountId});
-               }
-                         
-         <#else>  
-              console.log(2);
-              $('#amountSpend').append("N/A");
-              $('#clicks').append("N/A");
-               $('#conversions').append("N/A");
-               $('#amountEarned').append("N/A");
-               $('#roi').append("N/A");
-          </#if>       
-               
-               <#assign num = 1>
-               ${num}
-               
-        </#list>
-} 
-
-
-
-
-</script>
