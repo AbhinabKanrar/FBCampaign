@@ -70,15 +70,16 @@ function loadCampaignsInsight(accountId)
 	    if (data) {
 	          var temp=JSON.parse(data.replace('undefined',''));
 	          var source   = $("#campaign-insight-template").html();
+	          console.log(source);
 	          var template = Handlebars.compile(source);  
 	                                
 	          $.each(temp.data, function(key,value) { 	        	          	  
 		        	  if(!(value.insights==null)){
 		        		  $.each(value.insights, function(key,value1) { 
 		        			  if(value1[0]!=undefined)
-		        		      {			        	 
-		        		      console.log(value1[0].spend);
-		        		       var context = {campaignAmountSpent: value1[0].spend , campaignClicks: value1[0].clicks , campaignConversion:" N/A ", campaignAmountEarned:" N/A ", campaignROI:"N/A"};
+		        		      {					        			 
+		        		      console.log(value1[0].account_id);
+		        		      var context = {campaignAmountSpent: value1[0].spend , campaignClicks: value1[0].clicks , campaignConversion:" N/A ", campaignAmountEarned:" N/A ", campaignROI:"N/A" ,campaignId:value.id, accountId:'act_'+value1[0].account_id ,campaignName:value.name};
 				        	  console.log(context);
 				        	  var campaignInsighthtml = template(context);	
 				        	  //console.log(campaignInsighthtml);
@@ -89,23 +90,8 @@ function loadCampaignsInsight(accountId)
 		        
 	        	}); 
 	          
-//	          $.each(temp.data[], function(key,value) { 
-//	        	   $.each(value, function(key,value1) {        	  
-//		        	  console.log(value1);
-//		        	});
-//	        	}); 
-//	          if(!(temp.data.Insight==null))
-//	          {
-//	        	  var context = {campaignAmountSpent: temp.data[0].spend, campaignClicks: temp.data[0].spend.clicks ,campaignConversion:" TBD ",campaignAmountEarned:" TBD ",campaignROI:"TBD "};		          	          
-//	          }
-//	          else
-//	          {  var context = {adAmountSpend: "N/A", adClicks: "N/A" ,adConversions:" N/A ",adAmountEarned:" N/A ",adRoi:"N/A "};	             
-//	        	 }
-//	          var accountInsighthtml    = template(context);		         
-//         	  jQuery('#accountInsight').html(accountInsighthtml);	
 	    } else {
-	         console.log("Error loading campaignList");
-	    }
+	         console.log("Error loading campaignList");    }
 	   })
 	     .fail(function(x) {
 	    	 console.log("Error getting campaignList deffered");

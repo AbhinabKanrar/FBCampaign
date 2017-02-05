@@ -63,7 +63,7 @@
 					 <p id="campaignROI">{{campaignROI}}</p>
                  </div> 
                 <div class="col-md-1   text-center">
-                 <a href=""> <div class="btn-info view-button"> View</div></a>
+                 <a href="/campaign/{{campaignId}}/{{campaignName}}/{{accountId}}"> <div class="btn-info view-button"> View</div></a>
                   </div>
             </div>
 </script>

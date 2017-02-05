@@ -1,15 +1,14 @@
 <#--Included Header File-->
-
-<#include "header.ftl">
-    
+<#include "header.ftl">    
  <div class="container">
    <div class="row  ">
       <!-- Left Column -->
       <div class="col-md-8 left-col ">
-          
+         
+         
         <div  id="accountInsight" class="row well ">
                  
-          </div>  
+        </div>  
           
           
           <div class="row well ">              

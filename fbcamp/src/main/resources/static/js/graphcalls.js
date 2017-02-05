@@ -17,7 +17,7 @@ function getAdAccounts() {
 		contentType : "application/text",
 		url :URL,
 		dataType : 'text',
-		timeout : 100000,
+		timeout : 10000000,
 		success : function(data) {
 			obj=JSON.parse(data.replace('undefined',''));
 									
@@ -78,7 +78,7 @@ function getCampaigns(accountId){
 }
 
 function getCampaignsInsight(accountId){
-var URL="https://graph.facebook.com/v2.8/"+accountId+"/campaigns?fields=insights{account_id,account_name,spend,clicks,total_action_value,call_to_action_clicks},name&access_token="+access_token+" ";
+var URL="https://graph.facebook.com/v2.8/"+accountId+"/campaigns?fields=insights{account_id,account_name,spend,clicks,total_action_value,call_to_action_clicks},name,id&access_token="+access_token+" ";
 	return $.ajax({
 		type : "GET",
 		contentType : "application/text",
@@ -95,6 +95,34 @@ var URL="https://graph.facebook.com/v2.8/"+accountId+"/campaigns?fields=insights
 			console.log("DONE");
 		}		
 	});
+}
+	
+function getDynamicCampaignsInsight(array,accountId){
+	var str1="";
+	   for(var i in array){
+	    	  var str2= array[i]+",";
+	    	  str1=str1.concat(str2);	
+	    	  console.log(str1);
+	    }
+	  str1 = str1.substring(0, str1.length-1);
+	
+		var URL="https://graph.facebook.com/v2.8/"+accountId+"/campaigns?fields=insights{"+str1+"}&access_token="+access_token+" ";
+			return $.ajax({
+				type : "GET",
+				contentType : "application/text",
+				url : URL,
+				dataType : 'text',
+				timeout : 100000,
+				success : function(data) {
+					console.log("Success:  " ,data)			
+				},
+				error : function(e) {
+					console.log("ERROR: ", e);
+				},
+				done : function(e) {
+					console.log("DONE");
+				}		
+			});
    
 }
 
