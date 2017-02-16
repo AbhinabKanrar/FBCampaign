@@ -8,5 +8,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
     <script src="/js/graphcalls.js"></script>
     <script src="/js/dashboard.js"></script>
+    <script src="/js/adset.js"></script>
     </body>
 </html>

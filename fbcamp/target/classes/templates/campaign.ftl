@@ -1,9 +1,16 @@
 <#include "header.ftl">
 
 <script>
+console.log("Bitches I am here ")
 var pageScopeCampaignId=${campaignId};
 console.log(pageScopeCampaignId);
+var pageScopeCampaignName="${campaignName}";
+console.log(pageScopeCampaignName);
+var pageScopeAccountId="${accountId}";
+console.log(pageScopeAccountId);
 </script>
+
+
 <div class="container">
 	<div class="row well ">
 		<div class="col-md-3  text-center">

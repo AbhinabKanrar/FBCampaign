@@ -16,8 +16,8 @@ function loadDynamicCampaignsInsight(array,accountId)
 		        		       for(var i in value1[0]){
 		        		    	  var str2= '<div class="col-md-2   text-center"><p>'+i+'</p><span><img src="https://maxcdn.icons8.com/Color/PNG/24/Very_Basic/services-24.png" title="Services" width="48"></span><p>'+value1[0][i]+'</p></div>';
 		        		    	  str1=str1.concat(str2);		        		    	  
-		        		    	}		        
-		        		       str1=str1.concat('<div class="col-md-2  text-center">	<a href="/adset">View</a>	</div>');
+		        		    	}		        		      
+		        		       str1=str1.concat('<div class="col-md-2  text-center"> <a href="/adset/'+value.id+'/'+pageScopeCampaignName+'/'+pageScopeAccountId+'">View</a>	</div>');
 		        		       str1=str1.concat('<div class="col-md-2  text-center">	<a href="">Over Expense</a>	</div>');
 		        			}
 		        		  }		        			  

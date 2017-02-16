@@ -10,6 +10,7 @@ public class CampaignController {
 	public String campaign(@PathVariable("campaignId") String campaignId,@PathVariable("account_id") String accountId,@PathVariable("campaignName") String campaignName,Model model) {
 		model.addAttribute("campaignId",campaignId);
 		model.addAttribute("accountId",accountId);
+		model.addAttribute("campaignName",campaignName);
 		System.out.println(campaignId);
 	    return "campaign";
 	}

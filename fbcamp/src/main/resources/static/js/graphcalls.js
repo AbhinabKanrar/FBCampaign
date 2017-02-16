@@ -6,7 +6,7 @@
 //    });
 //});
 
-var access_token="EAAGPpGSsCToBAAsZABFxlRAZAMNNtym9pXbIY5MsolZClZBiPNSzTbVVgAwCBpfNtRdl46JFdOttnFtYWniJL1ZCp9nwsmCHzZCYo5utgxZAaT19f0ZAyGDjSp7wguxKF2FidwxRrYp5fZBdwbHTpOJiR5ePzroGP3UZAyrSB3RRL91QZDZD";
+var access_token="EAAGPpGSsCToBAJJ1gNw9GWUluf7Kc7k3U0hmbKqUDl2MTvyIEsNLw8RRBKTXjAJplzsxSLZBTuMG87Imv5XeX3ZBif4VXTkeZCaTgGU9ZATC43fwST5M3bbtprd4TPm2FqBqVD1dEAvvtL4mUlIvhQnZBxBb68A56gQTquf5P5QZDZD";
 
 
 function getAdAccounts() {	
@@ -125,5 +125,32 @@ function getDynamicCampaignsInsight(array,accountId){
 			});
    
 }
+
+function getAdSetInsights(campaignId){
+	
+	var URL="https://graph.facebook.com/v2.8/"+campaignId+"/insights?fields=adset_name,clicks&level=adset&time_increment=1&time_range={'since':'2016-01-08','until':'2017-01-29'}&access_token="+access_token+" ";
+	
+	console.log(URL);
+	var obj=null;
+	return $.ajax({
+		type : "GET",
+		contentType : "application/text",
+		url : URL,
+		dataType : 'text',
+		timeout : 100000,
+		success : function(data) {
+			obj=JSON.parse(data.replace('undefined',''));
+			console.log(obj)			
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+		},
+		done : function(e) {
+			console.log("DONE");
+		}		
+	});
+}
+
+
 
     

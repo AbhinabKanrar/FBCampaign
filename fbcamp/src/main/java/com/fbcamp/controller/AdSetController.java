@@ -7,8 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdSetController {
 	@RequestMapping(value="/adset/{campaignId}/{campaignName}/{account_id}")
-	public String adset(@PathVariable("campaignId") String campaignId,@PathVariable("account_id") String accountId,@PathVariable("campaignName") String campaignName,Model model) {
-		System.out.println("I am here");
-		return "adset";
+	public String adset(@PathVariable("campaignId") String campaignId,@PathVariable("campaignName") String campaignName,@PathVariable("account_id") String accountId,Model model) {
+		model.addAttribute("campaignId",campaignId);
+		model.addAttribute("accountId",accountId);
+		model.addAttribute("campaignName",campaignName);
+		System.out.println(campaignId);
+		System.out.println(campaignName);
+	   	return "adset";
 	}
 }
